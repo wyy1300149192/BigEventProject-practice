@@ -1,15 +1,11 @@
 <template>
-  <div>App 组件
-    <ElementUsage></ElementUsage>
-  </div>
+<router-view></router-view>
 </template>
 
 <script>
-import ElementUsage from '@/components/ElementUsage.vue'
 export default {
   name: "App",
   components: {
-    ElementUsage
   },
   methods: {
     fn () {

@@ -1,24 +1,21 @@
-# ev-cms
+# **大事件项目-练习使用**
+## 用到的知识：
 
-## Project setup
-```
-npm install
-```
+1. **Vue 基础**
+   + vue-cli、指令、组件、路由、vuex
+2. **axios**
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+    + baseURL、拦截器
 
-### Compiles and minifies for production
-```
-npm run build
-```
+3. **element-ui**
+   + 安装与配置、常用的组件
+4. **npm 与 模块化**
+   * 能使用 npm 维护项目中的依赖包
+   * ES6 模块化语法
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 学完本项目可以掌握的能力
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. 登录注册的业务实现流程
+2. 在项目中使用 vuex 管理全局共享的数据
+3. element-ui 组件在实际开发中的应用
+4. 文件上传、富文本编辑器在 Vue 项目中的应用
