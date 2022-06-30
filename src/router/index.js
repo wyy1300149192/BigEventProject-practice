@@ -1,51 +1,69 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
-// 引入 注册 组件
-import Reg from "../view/Reg/Reg.vue"
-// 引入 登录 组件
-import Login from "../view/Login/Login.vue"
-// 引入 主页 组件
-import Main from "../view/Main/Main.vue"
-// 引入主页 - 首页 组件
-import Home from "../view/Main/Home/Home.vue"
-// 引入主页 - 个人信息 组件
-import UserInfo from "../view/Main/User/UserInfo.vue"
-// 引入主页 - 更换头像 组件
-import UserAvatar from "../view/Main/User/UserAvatar.vue"
-// 引入主页 - 更换头像 组件
-import UserPwd from "../view/Main/User/UserPwd.vue"
-// 引入主页 - 文章分类 组件
-import ArtCate from "../view/Main/Article/ArtCate.vue"
 
-// 引入主页 - 文章发表 组件
-import ArtList from "../view/Main/Article/ArtList.vue"
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: "/reg",
-    component: Reg
+    component: () => import(/* webpackChunkName:"Reg" */ "../view/Reg/Reg.vue")
   },
   {
     path: "/login",
-    component: Login
+    component: () =>
+      import(/* webpackChunkName:"Login" */ "../view/Login/Login.vue")
   },
   {
     path: "/",
-    component: Main,
+    component: () =>
+      import(/* webpackChunkName:"Main" */ "../view/Main/Main.vue"),
     children: [
       // 主页 - 首页
-      { path: "/home", component: Home },
+      {
+        path: "/home",
+        component: () =>
+          import(/* webpackChunkName:"Home" */ "../view/Main/Home/Home.vue")
+      },
       // 主页 - 个人信息
-      { path: "/user-info", component: UserInfo },
+      {
+        path: "/user-info",
+        component: () =>
+          import(
+            /* webpackChunkName:"UserInfo" */ "../view/Main/User/UserInfo.vue"
+          )
+      },
       // 主页 - 更换头像
-      { path: "/user-avatar", component: UserAvatar },
+      {
+        path: "/user-avatar",
+        component: () =>
+          import(
+            /* webpackChunkName:"UserAvatar" */ "../view/Main/User/UserAvatar.vue"
+          )
+      },
       // 主页 - 重置密码
-      { path: "/user-pwd", component: UserPwd },
+      {
+        path: "/user-pwd",
+        component: () =>
+          import(
+            /* webpackChunkName:"UserPwd" */ "../view/Main/User/UserPwd.vue"
+          )
+      },
       // 主页 - 文章分类
-      { path: "art-cate", component: ArtCate },
+      {
+        path: "art-cate",
+        component: () =>
+          import(
+            /* webpackChunkName:"ArtCate" */ "../view/Main/Article/ArtCate.vue"
+          )
+      },
       // 主页 - 文章发表
-      { path: "art-list", component: ArtList }
+      {
+        path: "art-list",
+        component: () =>
+          import(
+            /* webpackChunkName:"ArtList" */ "../view/Main/Article/ArtList.vue"
+          )
+      }
     ]
   }
 ]
